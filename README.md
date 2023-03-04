@@ -1,4 +1,4 @@
-# vaik-segmentation-pb-experiment
+# vaik-segmentation-tflite-experiment
 
 Create json file by segmentation model. Calc mIoU.
 
@@ -16,11 +16,11 @@ pip install -r requirements.txt
 ### Create json file
 
 ```shell
-python inference.py --input_saved_model_dir_path '~/output_model/2023-03-04-19-07-35/step-5000_batch-8_epoch-3_loss_0.0017_one_hot_mean_io_u_0.8605_val_loss_0.1085_val_one_hot_mean_io_u_0.1840' \
+python inference.py --input_saved_model_path '~/.vaik-segmentation-tflite-exporter/model.tflite' \
                 --input_classes_path './test_images/classes.txt' \
                 --input_image_dir_path './test_images/raw' \
                 --answer_image_dir_path './test_images/seg' \
-                --output_dir_path '~/.vaik-segmentation-pb-experiment/test_images_out'
+                --output_dir_path '~/.vaik-segmentation-tflite-experiment/test_images_out'
 ```
 
 - input_image_dir_path
@@ -82,7 +82,7 @@ python inference.py --input_saved_model_dir_path '~/output_model/2023-03-04-19-0
 ### Calc mIoU
 
 ```shell
-python calc_miou.py --input_json_dir_path '~/.vaik-segmentation-pb-experiment/test_images_out' \
+python calc_miou.py --input_json_dir_path '~/.vaik-segmentation-tflite-experiment/test_images_out' \
                 --input_classes_path './test_images/classes.txt' \
                 --ignore_label 'background'
 ```
@@ -109,9 +109,9 @@ nine: 0.9502
 ### Draw
 
 ```shell
-python draw.py --input_json_dir_path '~/.vaik-segmentation-pb-experiment/test_images_out' \
+python draw.py --input_json_dir_path '~/.vaik-segmentation-tflite-experiment/test_images_out' \
                 --input_classes_path './test_images/classes.txt' \
-                --output_dir_path '~/.vaik-segmentation-pb-experiment/test_images_out_draw'
+                --output_dir_path '~/.vaik-segmentation-tflite-experiment/test_images_out_draw'
 ```
 
 #### Output
