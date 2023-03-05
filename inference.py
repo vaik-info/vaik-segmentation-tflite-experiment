@@ -46,7 +46,7 @@ def main(input_saved_model_path, input_classes_path, input_image_dir_path, answe
                                  'shape': output_elem['labels'].shape}
         with open(output_json_path, 'w') as f:
             json.dump(output_elem, f, ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
-    print(f'{len(image_list) / (end - start)}[images/sec]')
+    print(f'{len(image_list) / total_time}[images/sec]')
 
 
 if __name__ == '__main__':
