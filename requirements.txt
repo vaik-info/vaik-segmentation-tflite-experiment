@@ -1,2 +1,2 @@
 tqdm>=4.64.1
-vaik-segmentation-tflite-inference @ git+https://github.com/vaik-info/vaik-segmentation-tflite-inference.git@13e7afa2eaef1d77a939ea8c795f473209a751d2
+vaik-segmentation-tflite-inference @ git+https://github.com/vaik-info/vaik-segmentation-tflite-inference.git@7bb396602b1609e3450202aa085f77654edbcde5

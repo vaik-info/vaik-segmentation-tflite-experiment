@@ -22,7 +22,7 @@ def main(input_saved_model_path, input_classes_path, input_image_dir_path, answe
     for file in types:
         image_path_list.extend(glob.glob(os.path.join(input_image_dir_path, f'{file}'), recursive=True))
     image_list = []
-    for image_path in tqdm(image_path_list, 'read images'):
+    for image_path in image_path_list:
         image = np.asarray(Image.open(image_path).convert('RGB'))
         image_list.append(image)
 

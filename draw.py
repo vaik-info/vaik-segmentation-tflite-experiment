@@ -56,9 +56,9 @@ def main(input_json_dir_path, input_classes_path, output_dir_path):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='inference')
-    parser.add_argument('--input_json_dir_path', type=str, default='~/.vaik-segmentation-pb-experiment/test_images_out')
+    parser.add_argument('--input_json_dir_path', type=str, default='~/.vaik-segmentation-tflite-experiment/test_images_out')
     parser.add_argument('--input_classes_path', type=str,  default=os.path.join(os.path.dirname(__file__), 'test_images/classes.txt'))
-    parser.add_argument('--output_dir_path', type=str,  default='~/.vaik-segmentation-pb-experiment/test_images_out_draw')
+    parser.add_argument('--output_dir_path', type=str,  default='~/.vaik-segmentation-tflite-experiment/test_images_out_draw')
     args = parser.parse_args()
 
     args.input_json_dir_path = os.path.expanduser(args.input_json_dir_path)
